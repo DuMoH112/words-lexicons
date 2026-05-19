@@ -1,0 +1,12 @@
+# Generated release artifacts
+*.txt
+*.txt.gz
+lexicons_manifest.json
+
+# Local source checkouts
+checkouts/
+tmp/
+
+# macOS
+.DS_Store
+
