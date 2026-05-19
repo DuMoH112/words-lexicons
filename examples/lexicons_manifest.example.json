@@ -2,14 +2,13 @@
   {
     "language_code": "EN",
     "version": 1,
-    "download_url": "https://github.com/<owner>/words-lexicons/releases/download/v1/en_words.txt.gz",
+    "download_url": "https://github.com/DuMoH112/words-lexicons/releases/download/v1/en_words.txt.gz",
     "sha256": "<archive-sha256>",
     "byte_size": 123456,
     "word_count": 155000,
     "source_name": "ESDB/SCOWL",
     "source_url": "https://github.com/en-wl/wordlist",
-    "source_license": "SCOWL/en-wl license",
+    "source_license": "ESDB MIT-like notice",
     "generated_at": "2026-05-19T00:00:00Z"
   }
 ]
-

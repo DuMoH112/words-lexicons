@@ -27,6 +27,7 @@
 - В release загружены все `<language>_words.txt.gz`.
 - `download_url` в manifest указывает на этот release tag.
 - Latest release содержит актуальный manifest.
+- В release notes есть ссылка на `licenses/en.md` для EN artifacts.
 
 ## Проверка
 
@@ -36,4 +37,4 @@
 - Архив распаковывается локально.
 - `word_count` совпадает с количеством строк.
 - В словаре нет переводов, описаний и данных учебных паков.
-
+- Для каждого языка сохранена source/license attribution.

@@ -1,6 +1,6 @@
 # EN source
 
-Первый планируемый источник: `ESDB/SCOWL`.
+Первый источник: `ESDB/SCOWL`.
 
 Source URL:
 
@@ -22,3 +22,8 @@ https://github.com/en-wl/wordlist
 Этот репозиторий не хранит upstream checkout. Локальный checkout источника
 нужен только на машине, где запускается generator.
 
+Команда генератора использует American spelling, size `70`, variant level `1`,
+deaccent, пустые special categories и исключение abbreviations. После этого
+локальный фильтр оставляет только game-safe lowercase `a-z` lemma. Слова,
+которые upstream отдал с заглавными буквами, не нормализуются в lowercase, а
+исключаются, чтобы не заносить имена собственные и аббревиатуры.

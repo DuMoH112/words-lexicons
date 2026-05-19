@@ -7,6 +7,10 @@
 - `lexicons_manifest.json`
 - `<language>_words.txt.gz`
 
+Код и документация этого репозитория распространяются под MIT License. Данные
+словарей наследуют условия своих upstream-источников; для `EN` они описаны в
+`licenses/en.md`.
+
 Репозиторий не является источником учебного контента. В нем не должно быть
 переводов, описаний, категорий, уровней, paid-pack данных и пользовательского
 прогресса.
@@ -49,13 +53,13 @@ https://github.com/<owner>/words-lexicons/releases/latest/download/lexicons_mani
 {
   "language_code": "EN",
   "version": 1,
-  "download_url": "https://github.com/<owner>/words-lexicons/releases/download/v1/en_words.txt.gz",
+  "download_url": "https://github.com/DuMoH112/words-lexicons/releases/download/v1/en_words.txt.gz",
   "sha256": "<archive-sha256>",
   "byte_size": 123456,
   "word_count": 155000,
   "source_name": "ESDB/SCOWL",
   "source_url": "https://github.com/en-wl/wordlist",
-  "source_license": "SCOWL/en-wl license",
+  "source_license": "ESDB MIT-like notice",
   "generated_at": "2026-05-19T00:00:00Z"
 }
 ```
@@ -68,6 +72,7 @@ https://github.com/<owner>/words-lexicons/releases/latest/download/lexicons_mani
 docs/release-checklist.md
 examples/lexicons_manifest.example.json
 licenses/<language>.md
+scripts/build_en_lexicon.py
 sources/<language>.md
 ```
 
@@ -82,9 +87,33 @@ sources/<language>.md
 
 - только lowercase `a-z`
 - длина от 3 символов
+- слова, которые upstream отдал с заглавными буквами, исключаются
 - без дефисов
 - без апострофов
 - без точек
 - без цифр
 - без спецсимволов
 
+## Сборка EN artifacts
+
+Скрипт не скачивает upstream-данные сам. Перед запуском нужен локальный checkout
+`en-wl/wordlist` или уже подготовленный plain word list.
+
+Пример с checkout:
+
+```sh
+git clone https://github.com/en-wl/wordlist.git checkouts/en-wl-wordlist
+scripts/build_en_lexicon.py checkouts/en-wl-wordlist dist 1
+```
+
+Пример с готовым plain word list:
+
+```sh
+scripts/build_en_lexicon.py /path/to/words.txt dist 1
+```
+
+Output:
+
+- `dist/en_words.txt`
+- `dist/en_words.txt.gz`
+- `dist/lexicons_manifest.json`
