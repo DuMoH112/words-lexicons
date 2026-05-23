@@ -23,6 +23,10 @@
 Учебные данные остаются в `Learning Packs` внутри приложения или будущей системы
 паков. Эти два слоя нельзя смешивать.
 
+Связанные документы в GDD приложения:
+- [загрузка данных](../Words/.docs/gdd/delivery/downloads.md) описывает runtime-установку словаря
+- [локальная база данных](../Words/.docs/gdd/data/local-database.md) описывает хранение словаря после импорта
+
 ## GitHub Releases contract
 
 Runtime URL приложения должен указывать на latest release:
